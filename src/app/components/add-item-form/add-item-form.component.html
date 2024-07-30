@@ -1,0 +1,10 @@
+<article class="form-container">
+  <h1>Simple form</h1>
+  <form [formGroup]="form" (submit)="onSubmit()">
+    <input type="text" formControlName="item" placeholder="Item description" (focus)="onFocus()"/>
+    <button type="submit">Add</button>
+  </form>
+  @if(form.controls['item'].touched && form.controls['item'].invalid) {
+    <span class="error">{{ errorMessage }}</span>
+  }
+</article>
